@@ -16,7 +16,7 @@ public class InventoryCollectionException extends Exception {
 		
 	}
 	
-	public static String ItemAllreadyExists() {
+	public static String InventoryAllreadyExists() {
 		return "Inventory item with given name already exists";
 	}
 	

@@ -58,9 +58,9 @@ public class ItemServiceImpl implements ItemService {
 		
 		if (itemWithId.isPresent()) {
 			
-			if (itemWithSameName.isEmpty()) {
-				throw new ItemCollectionException(ItemCollectionException.ItemAllreadyExists());
-			}
+//			if (itemWithSameName.isEmpty()) {
+//				throw new ItemCollectionException(ItemCollectionException.ItemAllreadyExists());
+//			}
 			ItemDTO itemToUpdate =  itemWithId.get();
 			itemToUpdate.setName(item.getName());
 			itemToUpdate.setCode(item.getCode());

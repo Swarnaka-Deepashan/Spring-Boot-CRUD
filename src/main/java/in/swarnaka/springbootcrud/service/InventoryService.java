@@ -2,6 +2,8 @@ package in.swarnaka.springbootcrud.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import in.swarnaka.springbootcrud.exception.InventoryCollectionException;
 import in.swarnaka.springbootcrud.model.InventoryDTO;
 import jakarta.validation.ConstraintViolationException;

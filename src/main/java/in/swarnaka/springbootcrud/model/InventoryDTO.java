@@ -1,10 +1,11 @@
 package in.swarnaka.springbootcrud.model;
 
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -35,8 +36,9 @@ public class InventoryDTO {
 	@NotNull
 	private String batchNumber;
 	
-	@NotNull
-	private ZonedDateTime expiryDate;
+	 @NotNull
+	 @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+	 private Date expiryDate;
 	
 	@NotNull
 	private BigDecimal stock;
@@ -81,11 +83,11 @@ public class InventoryDTO {
 		this.batchNumber = batchNumber;
 	}
 
-	public ZonedDateTime getExpiryDate() {
+	public Date getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ZonedDateTime expiryDate) {
+	public void setExpiryDate(@NotNull Date expiryDate) {
 		this.expiryDate = expiryDate;
 	}
 
