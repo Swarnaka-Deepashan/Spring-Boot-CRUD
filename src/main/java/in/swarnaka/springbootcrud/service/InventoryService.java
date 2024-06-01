@@ -19,5 +19,8 @@ public interface InventoryService {
 	public void updateInventory(String id, InventoryDTO inventory) throws InventoryCollectionException;
 	
 	public void deleteInventoryById(String id) throws InventoryCollectionException;
+	
+	List<InventoryDTO> getInventoriesByItemId(String itemId);
+	
 
 }

@@ -24,7 +24,7 @@ public class InventoryDTO {
 	@Id
 	private String id;
 	
-	@NotNull
+	
 	private String itemId;
 	
 	@NotNull

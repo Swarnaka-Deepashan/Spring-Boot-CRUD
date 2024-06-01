@@ -13,6 +13,8 @@ public interface ItemRepository extends MongoRepository<ItemDTO, String> {
 	
 	@Query("{'item': ?0}")
 	Optional<ItemDTO> findByName(String Item);	
+	
+	
 }
 
 

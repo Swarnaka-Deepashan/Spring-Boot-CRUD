@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.swarnaka.springbootcrud.exception.ItemCollectionException;
+import in.swarnaka.springbootcrud.model.InventoryDTO;
 import in.swarnaka.springbootcrud.model.ItemDTO;
 import in.swarnaka.springbootcrud.repository.ItemRepository;
+import in.swarnaka.springbootcrud.service.InventoryService;
 import in.swarnaka.springbootcrud.service.ItemService;
 import jakarta.validation.ConstraintViolationException;
 
@@ -26,6 +28,9 @@ import jakarta.validation.ConstraintViolationException;
 public class ItemController {
 	@Autowired
 	private ItemService itemService;
+	
+	@Autowired
+	private InventoryService inventoryService;
 	
 	
 	@GetMapping("/items")
@@ -57,7 +62,16 @@ public class ItemController {
 		}
 	}
 	
+	///////////////////////////////////////////
 	
+	@GetMapping("/inventory/item/{itemId}")
+	public ResponseEntity<List<InventoryDTO>> getInventoriesByItemId(@PathVariable String itemId) {
+	    List<InventoryDTO> inventories = inventoryService.getInventoriesByItemId(itemId);
+	    return new ResponseEntity<>(inventories, HttpStatus.OK);
+	}
+
+	
+	////////////////////////////////////////////
 	
 	
 	@PutMapping("/items/{id}")

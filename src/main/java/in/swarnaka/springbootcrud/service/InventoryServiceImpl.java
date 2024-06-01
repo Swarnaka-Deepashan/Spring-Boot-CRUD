@@ -85,6 +85,13 @@ public class InventoryServiceImpl implements InventoryService {
 		
 	}
 	
+	@Override
+    public List<InventoryDTO> getInventoriesByItemId(String itemId) {
+        return inventoryRepository.findByItemId(itemId);
+    }
+	
+	
+	
 	
 
 }
