@@ -21,6 +21,7 @@ import in.swarnaka.springbootcrud.service.UserService;
 @RequestMapping("/auth")
 @CrossOrigin(origins = "http://localhost:4200")
 public class AuthenticationController {
+
 	
 	 @Autowired
 	    private UserService userService;
@@ -54,8 +55,6 @@ public class AuthenticationController {
 	    }
 	    
 	    
-	    
-	    
 	    @PostMapping("/register")
 	    public ResponseEntity<User> registerUser(@RequestBody Map<String, String> credentials) {
 	    	
@@ -63,11 +62,8 @@ public class AuthenticationController {
 	        String password = credentials.get("password");
 	        
 	       
-	        User newUser = userService.createUser(username, password);
-	        
+	        User newUser = userService.createUser(username, password);	        
 	        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 	    }
-
 	    
-
 }
